@@ -14,8 +14,8 @@
   "checkApproval": true,
   "language": "en",
   "notesLanguage": "change to your language with ISO 639-1 code, available languages: vi (Vietnamese), en (English)",
-  "nickNameBot": "💻ɴᴏᴏʙ ᴄᴏʀᴇ⚡",
-  "prefix": "-",
+  "nickNameBot": "𝗝𝗔𝗡𝗨𝗨𝗨😚💫",
+  "prefix": "/",
   "adminOnly": {
     "enable": false,
     "ignoreCommand": []
@@ -40,13 +40,16 @@
     "notes": "github bot running use false..... [ render, vercel, railway, cyclic heruku, koyeb ] bot running use true...interval is 60 = 1minute auto GitHub push"
   },
   "logsbot": [
-    "2177252409470039"
+    "100087466441450"
   ],
   "adminBot": [
-    "100077764623961"
+    "100087466441450",
+    "61563627004291"
   ],
   "creator": [
-    "61565898444113"
+    "100087466441450",
+    "61563627004291"
+    
   ],
   "whiteListMode": {
     "enable": false,
