@@ -2,7 +2,7 @@ module.exports = {
 	config: {
 		name: "sorthelp",
 		version: "1.2",
-		author: "NTKhang",
+		author: "NTKhang",// 𝗙𝗶𝘅𝗲𝗱 𝗯𝘆 𝗧𝗮𝗺𝗶𝗺 𝗕𝗯𝘇
 		countDown: 5,
 		role: 0,
 		description: {
