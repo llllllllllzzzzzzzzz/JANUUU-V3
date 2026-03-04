@@ -37,13 +37,13 @@ module.exports = {
 
       let cat = args[0];
       if (!cat) {
-        return message.reply(`📚 𝘈𝘷𝘢𝘪𝘭𝘢𝘣𝘭𝘦 𝘊𝘢𝘵𝘦𝘨𝘰𝘳𝘪𝘦𝘴:\n• ${availableCats.join(" • ")}`);
+        return message.reply(`📚 𝗔𝘃𝗮𝗶𝗹𝗮𝗯𝗹𝗲 𝗖𝗮𝘁𝗲𝗴𝗼𝗿𝗶𝗲𝘀:\n• ${availableCats.join(" • ")}`);
       }
 
       cat = cat.toLowerCase();
 
       if (!availableCats.includes(cat)) {
-        return message.reply(`❌ Invalid category!\n\n📚 𝘈𝘷𝘢𝘪𝘭𝘢𝘣𝘭𝘦 𝘊𝘢𝘵𝘦𝘨𝘰𝘳𝘪𝘦𝘴:\n• ${availableCats.join(" • ")}`);
+        return message.reply(`❌ Invalid category!\n\n📚 𝗔𝘃𝗮𝗶𝗹𝗮𝗯𝗹𝗲 𝗖𝗮𝘁𝗲𝗴𝗼𝗿𝗶𝗲𝘀:\n• ${availableCats.join(" • ")}`);
       }
 
       const apiBaseRes = await axios.get("https://raw.githubusercontent.com/noobcore404/NC-STORE/main/NCApiUrl.json");
@@ -61,12 +61,13 @@ module.exports = {
       const { bn, en } = res.data.result;
 
       const text = `
-💬 𝘙𝘢𝘯𝘥𝘰𝘮 𝘊𝘢𝘱𝘵𝘪𝘰𝘯
+💬 𝗥𝗲𝗻𝗱𝗼𝗻:
+  ⚠️ 𝗘𝗿𝗿𝗼𝗿
 
-🌸 𝑩𝒂𝒏𝒈𝒍𝒂:
+🌸 𝗕𝗮𝗻𝗴𝗹𝗮:
 ${bn}
 
-🌎 𝑬𝒏𝒈𝒍𝒊𝒔𝒉:
+🌎 𝗘𝗻𝗴𝗹𝗶𝘀𝗵:
 ${en}
 `;
 
