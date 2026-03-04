@@ -1,78 +1,66 @@
-const axios = require("axios");
-const fs = require("fs");
-const yts = require("yt-search");
+const A = require("axios");
+const B = require("fs-extra");
+const C = require("path");
+const S = require("yt-search");
 
-const RENDER_API = "https://yt-api-2.onrender.com/download";
+const p = C.join(__dirname, "cache", `${Date.now()}.mp3`);
+
+const nix = "https://raw.githubusercontent.com/aryannix/stuffs/master/raw/apis.json";
 
 module.exports = {
   config: {
-    name: "song",
-    version: "4.3.0",
-    author: "NC-TOSHIRO",
-    category: "media",
-    cooldown: 5,
+    name: "sing",
+    aliases: ["song", "music", "play"],
+    version: "0.0.1",
+    author: "ArYAN",
+    countDown: 10,
     role: 0,
-    shortDescription: "Download audio from YouTube",
-    usages: "{usePrefix}song [name or link]",
-    usePrefix: true
+    category: "media"
   },
 
-  ncStart: async function ({ api, event, args, message }) {
-    if (!args[0])
-      return message.reply("❄️ Please provide a song name or YouTube link.");
+  ncStart: async function ({ api, event, args }) {
+    const { threadID: t, messageID: m } = event;
+    const q = args.join(" ");
+    if (!q) return api.sendMessage("❌ Please provide a song name or link.", t, m);
 
-    await api.setMessageReaction("🎧", event.messageID, event.threadID);
-
-    const waitMsg = await api.sendMessage(
-      "⏳ Downloading your song, please wait…",
-      event.threadID
-    );
+    api.setMessageReaction("⏳", m, () => {}, true);
 
     try {
-      let video;
-
-      if (/youtu\.?be/.test(args.join(" "))) {
-        const search = await yts(args.join(" "));
-        video = search.videos[0];
-      } else {
-        const search = await yts(args.join(" "));
-        if (!search.videos.length) {
-          await api.unsendMessage(waitMsg.messageID);
-          return message.reply("❌ No results found.");
-        }
-        video = search.videos[0];
+      const D = await A.get(nix);
+      const E = D.data.api;
+      
+      let u = q;
+      if (!q.startsWith("http")) {
+        const r = await S(q);
+        const v = r.videos[0];
+        if (!v) throw new Error("Error ytdl issue 🧘");
+        u = v.url;
       }
 
-      const { data } = await axios.get(
-        `${RENDER_API}?url=${encodeURIComponent(video.url)}`
-      );
+      const F = await A.get(`${E}/ytdl`, {
+        params: { url: u, type: "audio" }
+      });
 
-      if (!data.success || !data.url) {
-        await api.unsendMessage(waitMsg.messageID);
-        return message.reply("❌ Download failed.");
-      }
+      if (!F.data.status || !F.data.downloadUrl) throw new Error("API Error");
 
-      const audio = await axios.get(data.url, { responseType: "arraybuffer" });
-      const fileName = `audio_${Date.now()}.mp3`;
-      fs.writeFileSync(fileName, Buffer.from(audio.data));
+      const DL = F.data.downloadUrl;
+      const title = F.data.title || "Song";
 
-      try { await api.unsendMessage(waitMsg.messageID); } catch {}
+      const res = await A.get(DL, { responseType: "arraybuffer" });
+      await B.outputFile(p, Buffer.from(res.data));
 
-      await api.sendMessage({
-        body: `🎵 ${video.title}`,
-        attachment: fs.createReadStream(fileName)
-      }, event.threadID);
+      api.setMessageReaction("✅", m, () => {}, true);
 
-      fs.unlinkSync(fileName);
-      await api.setMessageReaction("✅", event.messageID, event.threadID);
+      return api.sendMessage({
+        body: `🎵 Title: ${title}`,
+        attachment: B.createReadStream(p)
+      }, t, () => {
+        if (B.existsSync(p)) B.unlinkSync(p);
+      }, m);
 
-    } catch (err) {
-      try { await api.unsendMessage(waitMsg.messageID); } catch {}
-      message.reply("⚠️ Error while downloading song.");
+    } catch (e) {
+      api.setMessageReaction("❌", m, () => {}, true);
+      return api.sendMessage(`❌ Error: ${e.message}`, t, m);
     }
-  },
-
-  ncPrefix: async function () {},
-
-  ncReply: async function () {}
+  }
 };
