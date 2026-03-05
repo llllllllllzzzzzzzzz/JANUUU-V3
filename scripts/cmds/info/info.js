@@ -2,7 +2,7 @@ module.exports = {
   config: {
     name: "info",
     version: "1.0",
-    author: "💻𝑵𝑪-𝑿𝑵𝑰𝑳6𝒙⚡",
+    author: "𝗧𝗮𝗺𝗶𝗺 𝗕𝗯𝘇",
     countDown: 5,
     role: 0, // 0 use for everyone, 1 use for box admin, 2 use for bot admin, 3 use for bot Creator
     premium: false, // ture use only premium user
@@ -23,20 +23,20 @@ module.exports = {
     en: {
       infoMessage:
 `╔════════════════════╗
-   🤖 NOOBCORE BOT INFO
+     𝗕𝗕𝗢𝗧 𝗜𝗡𝗙𝗢𝗥𝗠𝗔𝗧𝗜𝗢𝗡
 ╚════════════════════╝
 
-📌 Bot Name: NoobCore-v3
-⚡ Version: 3.0
-👨‍💻 Developer: Noob Programmer
-🌐 Platform: Facebook Messenger
-🧠 System: Modular Command + Event Driven
-🔄 Multi AppState: Enabled
+📌 𝙱𝚘𝚝 𝚗𝚊𝚖𝚎: NoobCore-v3
+⚡ 𝚅𝚎𝚛𝚜𝚒𝚘𝚗: 3.0
+👨‍💻 𝙳𝚎𝚟𝚎𝚕𝚘𝚙𝚎𝚛: Noob Programmer
+🌐 𝙿𝚕𝚊𝚝𝚏𝚛𝚘𝚖: Facebook Messenger
+🧠 𝚂𝚢𝚜𝚝𝚎𝚖: Modular Command + Event Driven
+🔄 𝙼𝚞𝚕𝚝𝚢 𝚊𝚙𝚙𝚜𝚝𝚊𝚝𝚎: Enabled
 
-Reply with:
-1️⃣ - Show Prefix
-2️⃣ - Show Admin List
-3️⃣ - Show Creator ID
+𝚁𝚎𝚙𝚕𝚊𝚢 𝚠𝚒𝚝𝚑:
+1️⃣ - 𝚂𝚑𝚘𝚠 Prefix
+2️⃣ - 𝚂𝚑𝚘𝚠 𝙰𝚍𝚖𝚒𝚗 𝚕𝚒𝚜𝚝 
+3️⃣ - 𝚂𝚑𝚘𝚠 𝙲𝚊𝚛𝚎𝚊𝚝 𝙸𝙳
 
 React ❤️ to get uptime status.
 `
