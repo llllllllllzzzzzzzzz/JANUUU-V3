@@ -184,7 +184,7 @@ module.exports.ncPrefix = async ({
         const body = event.body ? event.body?.toLowerCase() : ""
         if (body.startsWith("baby") || body.startsWith("bby") || body.startsWith("bot") || body.startsWith("jan") || body.startsWith("babu") || body.startsWith("janu")) {
             const arr = body.replace(/^\S+\s*/, "")
-            const randomReplies = ["😚", "Yes 😀, I am here", "What's up?", "Bolo jaan ki korte panmr jonno"];
+            const randomReplies = ["চলো বেবি চিপায় জাই 🌚", "ষুদলিং পং.!🥹", "আম গাছে আম নাই ঢিল কেন মারো, তোমার সাথে প্রেম নাই বেবি কেন ডাকো!🫣", "মেয়ে হলে ইনবক্সে আসো", "বট বট না করে আমার বস তামিমরে একটা প্রেম করাই দে 😒", "সর ফকিন্নি তর নানিরে আই লাপিউ🫣😚"];
             if (!arr) {
         return await api.sendMessage(randomReplies[Math.floor(Math.random() * randomReplies.length)], event.threadID, (error, info) => {
                     if (!info) message.reply("info obj not found")
