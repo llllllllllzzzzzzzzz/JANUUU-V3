@@ -31,17 +31,17 @@ const sendPage = async (
   }).join("\n\n");
 
   const body =
-`📦 GROUP CHATS LIST
+`📦 𝗚𝗥𝗢𝗨𝗣 𝗖𝗛𝗔𝗧 𝗟𝗜𝗦𝗧
 ━━━━━━━━━━━━━━━━━━
 ${msg}
 ━━━━━━━━━━━━━━━━━━
 
-📄 Page: ${page}/${totalPages}
+📄 𝗣𝗮𝗴𝗲: ${page}/${totalPages}
 
-📌 Reply:
-• next
-• prev
-• leave <number>`;
+📌 𝗥𝗲𝗽𝗹𝗮𝘆:
+•  𝗡𝗲𝘅𝘁
+•  𝗽𝗿𝗲𝘃
+•  𝗟𝗲𝗮𝘃𝗲 <number>`;
 
   const info = await api.sendMessage(
     body,
