@@ -20,6 +20,7 @@ module.exports = {
     version: "1.0",
     author: "NC-Saimx69x",// 𝗙𝗶𝘅𝗲𝗱 𝗯𝘆 𝗧𝗮𝗺𝗶𝗺 𝗕𝗯𝘇
     countDown: 5,
+    premium: true,
     role: 0,
     shortDescription: "Edit an image using text prompt",
     longDescription: "Only edits an existing image. Must reply to an image.",
