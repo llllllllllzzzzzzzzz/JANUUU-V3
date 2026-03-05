@@ -19,6 +19,7 @@ module.exports = {
     version: "1.0",
     author: "𝑵𝑪-𝑺𝑨𝑰𝑴", //Api by Renz 
     team: "NoobCore",
+    premium: true,
     countDown: 5,
     role: 0,
     description: {
