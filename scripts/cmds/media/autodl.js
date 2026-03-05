@@ -105,10 +105,7 @@ module.exports = {
       api.sendMessage(
         {
           body:
-`╭─「 ✅ DOWNLOAD COMPLETE 」─╮
-│ 🎬 Title    : ${data.title || "Unknown"}
-│ 📁 Type     : ${data.type || "media"}
-╰──────────────────────╯`,
+`✅নে ফকিন্নি তর ভিডিও😒`,
           attachment: fs.createReadStream(filePath)
         },
         event.threadID,
