@@ -15,6 +15,7 @@ module.exports = {
     author: "ArYAN",
     countDown: 10,
     role: 0,
+    usePrefix: false,
     category: "media"
   },
 
