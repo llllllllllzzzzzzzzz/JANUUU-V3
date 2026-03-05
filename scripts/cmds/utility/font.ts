@@ -10,7 +10,7 @@ const command = {
     role: 0,
     shortDescription: "Convert text to fancy fonts.",
     longDescription: "Use /font <id> <text> or /font list",
-    guide: "{pn} list | {pn} 16 NoobCore 404"
+    guide: "{pn} list | {pn} 16 Tamim Bbz 404"
   },
 
   ncStart: async ({ message, event, api }: any) => {
@@ -46,7 +46,7 @@ const command = {
           );
         }
 
-        let output = `FONT LIST\n────────────\nText: ${text}\n\n`;
+        let output = `𝗙𝗢𝗡𝗧 𝗟𝗜𝗦𝗧\n────────────\nText: ${text}\n\n`;
 
         Object.entries(res.data.results).forEach(
           ([id, font]: [string, any]) => {
