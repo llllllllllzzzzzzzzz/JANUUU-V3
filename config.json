@@ -31,7 +31,7 @@
     ]
   },
   "autogit": {
-    "enable": true,
+    "enable": false,
     "GITHUB_TOKEN": "you_github_token",
     "owner": "your_githb_username",
     "repo": "your_fork_name",
