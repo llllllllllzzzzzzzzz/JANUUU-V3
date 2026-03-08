@@ -40,7 +40,7 @@
 		"moment-timezone": "^0.5.48",
 		"mongoose": "^6.3.1",
 		"mqtt": "^4.3.7",
-		"neokex-fca": "^4.5.5",
+		"neokex-fca": "^4.7.9",
 		"node-cron": "^3.0.2",
 		"nodemailer": "^6.7.5",
 		"npmlog": "^7.0.1",
