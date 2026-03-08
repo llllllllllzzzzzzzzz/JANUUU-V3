@@ -14,8 +14,9 @@
   "checkApproval": true,
   "language": "en",
   "notesLanguage": "change to your language with ISO 639-1 code, available languages: vi (Vietnamese), en (English)",
-  "nickNameBot": "𝗝𝗔𝗡𝗨𝗨𝗨😚💫",
+  "nickNameBot": "𝗬𝗼𝘂𝗿 𝗖𝗿𝗮𝘀𝗵",
   "prefix": "/",
+  "allowAdminNoPrefix": true,
   "adminOnly": {
     "enable": false,
     "ignoreCommand": []
@@ -31,7 +32,7 @@
     ]
   },
   "autogit": {
-    "enable": true,
+    "enable": false,
     "GITHUB_TOKEN": "you_github_token",
     "owner": "your_githb_username",
     "repo": "your_fork_name",
@@ -40,17 +41,20 @@
     "notes": "github bot running use false..... [ render, vercel, railway, cyclic heruku, koyeb ] bot running use true...interval is 60 = 1minute auto GitHub push"
   },
   "logsbot": [
-    "100087466441450"
+    "2177252409470039"
   ],
   "adminBot": [
-    "100087466441450",
-    "61563627004291"
+    "61563627004291",
+    "100087466441450"
   ],
   "creator": [
-    "100087466441450",
-    "61563627004291"
-    
+    "61563627004291",
+    "100087466441450"
   ],
+  "reactBy": {
+    "delete": ["😡", "🤬", "😾", "😠"],
+    "kick": ["🦶", "👟", "🥿"]
+  },
   "whiteListMode": {
     "enable": false,
     "whiteListIds": [
@@ -70,7 +74,7 @@
     "type": "mongodb",
     "uriMongodb": "mongodb+srv://tamimbbz:ami tamim bbz 12@cluster0.kzol74g.mongodb.net/?appName=Cluster0",
     "autoSyncWhenStart": false,
-    "autoRefreshThreadInfoFirstTime": true,
+    "autoRefreshThreadInfoFirstTime": false,
     "notes": "(1) type selects 'json' or 'sqlite' or 'mongodb'. If you choose mongodb, enter uri connect mongodb in the uriMongodb section, instructions to get uri connect mongodb at: https://youtu.be/z1f9urHW5xY. I recommend using 'mongodb' or 'sqlite', json is not recommended because it is not stable. (2) when you set autoSyncWhenStart to true, the bot will automatically synchronize the data in the database when starting the bot, this will make the bot start slower. (3) when you set autoRefreshThreadInfoFirstTime to true, the bot will automatically refresh the thread information when get first message from the thread since starting the bot"
   },
   "timeZone": "Asia/Dhaka",
